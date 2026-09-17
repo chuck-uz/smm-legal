@@ -1,0 +1,67 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render pages with repository variables
+        env:
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          set -euo pipefail
+          if [ -z "$CONTACT_EMAIL" ] || [ -z "$SITE_URL" ]; then
+            echo "::error::Repository variables CONTACT_EMAIL and SITE_URL must both be set"
+            exit 1
+          fi
+          SITE_URL="${SITE_URL%/}"
+          SITE_HOST="${SITE_URL#*://}"
+          SITE_HOST="${SITE_HOST%%/*}"
+
+          # Escape characters special in a sed replacement (delimiter is |).
+          esc() { printf '%s' "$1" | sed -e 's/[\\|&]/\\&/g'; }
+
+          mkdir -p _site
+          shopt -s nullglob
+          cp *.html *.css _site/
+
+          sed -i \
+            -e "s|{{CONTACT_EMAIL}}|$(esc "$CONTACT_EMAIL")|g" \
+            -e "s|{{SITE_URL}}|$(esc "$SITE_URL")|g" \
+            -e "s|{{SITE_HOST}}|$(esc "$SITE_HOST")|g" \
+            _site/*.html
+
+          if grep -rn '{{' _site; then
+            echo "::error::Unsubstituted {{...}} tokens remain in _site"
+            exit 1
+          fi
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

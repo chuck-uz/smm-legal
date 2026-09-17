@@ -24,15 +24,15 @@
   .fbar a { color:var(--muted); text-decoration:none; }
 </style>
 </head><body>
-<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="https://smm.example.com/login">Вход</a></div></header>
+<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="{{SITE_URL}}/login">Вход</a></div></header>
 <main>
 <h1>Правовые документы</h1>
-<p class="updated">Платформа продвижения турагентства · smm.example.com</p>
+<p class="updated">Платформа продвижения турагентства · {{SITE_HOST}}</p>
 <ul>
 <li><a href="./privacy.html">Политика конфиденциальности</a></li>
 <li><a href="./data-deletion.html">Удаление данных пользователей</a></li>
 <li><a href="./terms.html">Пользовательское соглашение</a></li>
 </ul>
 </main>
-<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:owner@example.com">owner@example.com</a></div></footer>
+<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></div></footer>
 </body></html>

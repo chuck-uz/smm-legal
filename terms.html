@@ -24,12 +24,12 @@
   .fbar a { color:var(--muted); text-decoration:none; }
 </style>
 </head><body>
-<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="https://smm.example.com/login">Вход</a></div></header>
+<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="{{SITE_URL}}/login">Вход</a></div></header>
 <main>
 <h1>Пользовательское соглашение</h1>
 <p class="updated">Обновлено: 15 июля 2026 года</p>
 <h2>1. О сервисе</h2>
-<p>Платформа по адресу <a href="https://smm.example.com/">smm.example.com</a> — внутренний инструмент турагентства для продвижения его Instagram-аккаунта, аналитики и обработки заявок. Сервис не является публичным продуктом: доступ к панели управления предоставляется только сотрудникам турагентства.</p>
+<p>Платформа по адресу <a href="{{SITE_URL}}/">{{SITE_HOST}}</a> — внутренний инструмент турагентства для продвижения его Instagram-аккаунта, аналитики и обработки заявок. Сервис не является публичным продуктом: доступ к панели управления предоставляется только сотрудникам турагентства.</p>
 <h2>2. Условия доступа</h2>
 <ul>
 <li>учётные записи выдаются администратором и не подлежат передаче третьим лицам;</li>
@@ -41,7 +41,7 @@
 <h2>4. Данные</h2>
 <p>Обработка данных описана в <a href="./privacy.html">Политике конфиденциальности</a>, порядок их удаления — на странице <a href="./data-deletion.html">«Удаление данных»</a>.</p>
 <h2>5. Контакты</h2>
-<p>Вопросы по работе сервиса и настоящему соглашению: <a href="mailto:owner@example.com">owner@example.com</a>.</p>
+<p>Вопросы по работе сервиса и настоящему соглашению: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
 </main>
-<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:owner@example.com">owner@example.com</a></div></footer>
+<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></div></footer>
 </body></html>

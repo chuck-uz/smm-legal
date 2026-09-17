@@ -24,12 +24,12 @@
   .fbar a { color:var(--muted); text-decoration:none; }
 </style>
 </head><body>
-<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="https://smm.example.com/login">Вход</a></div></header>
+<header><div class="bar"><a href="./index.html">Платформа продвижения турагентства</a><a class="muted" href="{{SITE_URL}}/login">Вход</a></div></header>
 <main>
 <h1>Политика конфиденциальности</h1>
 <p class="updated">Обновлено: 15 июля 2026 года</p>
 <h2>1. Кто мы</h2>
-<p>Платформа по адресу <a href="https://smm.example.com/">smm.example.com</a> — внутренний инструмент турагентства для продвижения его собственного Instagram-аккаунта и обработки заявок клиентов. Оператор данных — турагентство. Контакт по вопросам данных: <a href="mailto:owner@example.com">owner@example.com</a>.</p>
+<p>Платформа по адресу <a href="{{SITE_URL}}/">{{SITE_HOST}}</a> — внутренний инструмент турагентства для продвижения его собственного Instagram-аккаунта и обработки заявок клиентов. Оператор данных — турагентство. Контакт по вопросам данных: <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>.</p>
 <h2>2. Какие данные мы обрабатываем</h2>
 <ul>
 <li><strong>Данные Instagram-аккаунта турагентства</strong>, полученные через Instagram API компании Meta с согласия владельца аккаунта: публикации (медиа), комментарии к ним, статистика охватов и вовлечённости, обезличенная агрегированная демография аудитории.</li>
@@ -56,7 +56,7 @@
 <h2>6. Сколько данные хранятся и как их удалить</h2>
 <p>Данные Instagram-аккаунта хранятся, пока аккаунт подключён к платформе. При отключении аккаунта все связанные с ним данные (публикации, комментарии, метрики, отчёты) удаляются автоматически и безвозвратно. Порядок удаления описан на странице <a href="./data-deletion.html">«Удаление данных»</a>.</p>
 <h2>7. Ваши права</h2>
-<p>Вы можете запросить сведения о ваших данных, их исправление или удаление, написав на <a href="mailto:owner@example.com">owner@example.com</a>. Мы ответим в течение 30 дней.</p>
+<p>Вы можете запросить сведения о ваших данных, их исправление или удаление, написав на <a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>. Мы ответим в течение 30 дней.</p>
 </main>
-<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:owner@example.com">owner@example.com</a></div></footer>
+<footer><div class="fbar"><a href="./privacy.html">Политика конфиденциальности</a><a href="./data-deletion.html">Удаление данных</a><a href="./terms.html">Пользовательское соглашение</a><a href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a></div></footer>
 </body></html>
